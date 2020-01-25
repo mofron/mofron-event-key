@@ -1,0 +1,10 @@
+<require>
+    <tag load="mofron-comp-input">Input</tag>
+    <tag load="mofron-event-key">Key</tag>
+</require>
+
+<script name=key run=init>
+    console.log("'" + key2 + "' key press");
+</script>
+
+<Input name=inp event=Key:@key></Input>
