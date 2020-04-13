@@ -13,7 +13,7 @@ key event for mofron
 
 ## Feature
  - it is possible to implement key-event to target component by setting type that is "keydown", "keypress" or "keyup" (default type is "keydown")
- - the target event key is set by the 'key' method.
+ - it is possible to filter the target event key by setting the 'key' method.
  - the target key is all if user not set 'key' method.
 ## Attention
  - set event to mofron.window or mofron.document if you apply key-event to the whole page.
@@ -41,5 +41,7 @@ npm install mofron mofron-event-key
 
 | Short<br>Form | Parameter Name | Type | Description |
 |:-------------:|:---------------|:-----|:------------|
-| | listener | | ◯  | key | string | event target key |
+| ◯  | listener | function | event function |
+| | | mixed | event parameter |
+| ◯  | key | string | event target key |
 

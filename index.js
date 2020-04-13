@@ -12,28 +12,30 @@
  * @license MIT
  */
 const evCom = require('mofron-event-common');
-const comutl = mofron.util.common;
 
 module.exports = class extends evCom {
     /**
      * initialize event
      * 
-     * @param (mixed) short-form parameter
+     * @param (mixed) listener parameter
      *                key-value: event config
-     * @short key
+     * @param (string) key parameter
+     * @short listener,key
      * @type private
      */
-    constructor (prm) {
+    constructor (p1,p2) {
         try {
             super();
             this.name("Key");
 	    this.shortForm("listener", "key");
+            
 	    /* init config */
 	    this.confmng().add("type", { type: "string", select: ["keydown", "keypress", "keyup"], init: "keydown" });
 	    this.confmng().add("key", { type: "string" });
+            
             /* set config */
-	    if (undefined !== prm) {
-                this.config(prm);
+	    if (0 < arguments.length) {
+                this.config(p1, p2);
             }
         } catch (e) {
             console.error(e.stack);
@@ -44,7 +46,10 @@ module.exports = class extends evCom {
     /**
      * event listener function setter/getter
      * 
-     * @
+     * @param (function) event function
+     * @param (mixed) event parameter
+     * @return (array) event object ([0]:function, [1]:parameter)
+     * @type parameter
      */
     listener (fnc, prm) {
         try {
@@ -66,7 +71,7 @@ module.exports = class extends evCom {
 		     throw e;
 		}
 	    }
-	    return this.confmng("listener", comutl.get_eframe(set_fnc,[fnc,prm]));
+	    return this.confmng("listener", set_fnc, [fnc,prm]);
 	} catch (e) {
             console.error(e.stack);
 	    throw e;
