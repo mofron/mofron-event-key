@@ -26,7 +26,7 @@ module.exports = class extends evCom {
     constructor (p1,p2) {
         try {
             super();
-            this.name("Key");
+            this.modname("Key");
 	    this.shortForm("listener", "key");
             
 	    /* init config */

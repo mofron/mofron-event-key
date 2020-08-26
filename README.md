@@ -25,10 +25,10 @@ npm install mofron mofron-event-key
 
 # Sample
 ```html
-<require>
+<setting>
     <tag load="mofron-comp-input">Input</tag>
     <tag load="mofron-event-key">Key</tag>
-</require>
+</setting>
 
 <script name=key run=init>
     console.log("'" + key2 + "' key press");
