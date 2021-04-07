@@ -71,7 +71,7 @@ module.exports = class extends evCom {
 		     throw e;
 		}
 	    }
-	    return this.confmng("listener", set_fnc, [fnc,prm]);
+	    return this.confmng("listener", [set_fnc,[fnc,prm]]);
 	} catch (e) {
             console.error(e.stack);
 	    throw e;

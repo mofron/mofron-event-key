@@ -1,6 +1,6 @@
 {
   "name": "mofron-event-key",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "[mofron](https://mofron.github.io/mofron/) is module based frontend framework.",
   "main": "index.js",
   "scripts": {
